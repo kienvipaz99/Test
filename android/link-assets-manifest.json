@@ -1,0 +1,37 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/archivo.ttf",
+      "sha1": "a2e8fd6cdcd8d5049fc2cb2f2f341484ad87f4fd"
+    },
+    {
+      "path": "assets/fonts/archivoblackregular.ttf",
+      "sha1": "5b6c44432da2e1330ad30153eddf98c739013b88"
+    },
+    {
+      "path": "assets/fonts/archivobold.ttf",
+      "sha1": "f0ed42979a49d75fdecf08293f8e7eaeb5a2d8be"
+    },
+    {
+      "path": "assets/fonts/archivonorme.ttf",
+      "sha1": "adffc2d3fdfcfb07ea49dafd1314bee9baf2fcd1"
+    },
+    {
+      "path": "assets/fonts/Boleh.ttf",
+      "sha1": "584f4452d7d3f72fe7709babda5ecc4bc1d26897"
+    },
+    {
+      "path": "assets/fonts/haettenschweiler.ttf",
+      "sha1": "fd763ef1c169ed004030bb434a459eef8eb6dc64"
+    },
+    {
+      "path": "assets/fonts/haten.TTF",
+      "sha1": "d1ad441df71bd7efbeddfa48605feadc1366c33a"
+    },
+    {
+      "path": "assets/fonts/RubikBubbles-Regular.ttf",
+      "sha1": "c2c19e308f9e108e6ecebe2bd4e875b9cade5c9c"
+    }
+  ]
+}
