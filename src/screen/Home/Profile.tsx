@@ -1,20 +1,23 @@
-import {StyleSheet, Text, View, Image} from 'react-native';
+import {StyleSheet, Text, View, Image,FlatList} from 'react-native';
 import React from 'react';
 import Header from '../../component/Header';
 import images from '../../res/images';
 import sizes from '../../res/sizes';
 import RenderItemProfile from '../../component/renderItem/RenderItemProfile';
-
-const Profile = () => {
-  const rendeItem = ({item}: any) => {
+import Functionuser from '../../data/Functionuser'
+const Profile = ({navigation}:any) => {
+  const rendeItem = ({item,}: any) => {
     return (
       <>
-        <RenderItemProfile name="" />
+        <RenderItemProfile name={item.name} icon={item.icon} navi={item.navigation} navigation={navigation}/>
       </>
     );
   };
-  return (
-    <View style={styles.container}>
+const renderView:any = [];
+const RenderNullItem=()=> null;
+  const viewData =()=>{
+    return(
+      <>
       <View style={{marginLeft: 20}}>
         <Header
           user={true}
@@ -24,7 +27,11 @@ const Profile = () => {
             uriImage: images.slogan_thu_hut_khach_hang2,
           }}
         />
-        <View style={styles.styleProfile}>
+       
+        
+      </View>
+      <View style={{alignItems:'center',height:'14%'}}>
+      <View style={styles.styleProfile}>
           <Image source={images.avatar} style={styles.avatar} />
           <View>
             <Text style={styles.textname}>{'Nguyễn Văn Kiên'}</Text>
@@ -32,6 +39,21 @@ const Profile = () => {
           </View>
         </View>
       </View>
+     <View style={{width:'100%'}}>
+     <FlatList renderItem={rendeItem}
+      style={{width:'100%',marginTop:sizes._50sdp,}}
+      data={Functionuser || []}
+      keyExtractor={(item,index)=>item && item.id ?`${item?.id?.toString()}`:index?.toString()}/>
+     </View>
+     </>
+    )
+  }
+  return (
+    <View style={styles.container}>
+      <FlatList data={renderView}
+      renderItem={RenderNullItem}
+      ListEmptyComponent={viewData()}/>
+     
     </View>
   );
 };
@@ -57,7 +79,7 @@ const styles = StyleSheet.create({
     margin: 5,
   },
   styleProfile: {
-    height: '35%',
+    height: '100%',
     width: '90%',
     backgroundColor: '#E8E8E8',
     flexDirection: 'row',
