@@ -12,7 +12,7 @@ const Functionuser = [
     //MaterialCommunityIcons
     name: 'Bảng chấm công tháng',
     icon: 'book-edit-outline',
-    navigation: '',
+    navigation: 'TimekeepingRating',
   },
   {
     id:4,

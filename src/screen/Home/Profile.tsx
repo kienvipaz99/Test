@@ -5,8 +5,17 @@ import images from '../../res/images';
 import sizes from '../../res/sizes';
 import RenderItemProfile from '../../component/renderItem/RenderItemProfile';
 import Functionuser from '../../data/Functionuser'
+import { useSelector } from 'react-redux';
+import { selectData } from '../../redux/state/Data';
 const Profile = ({navigation}:any) => {
-  const rendeItem = ({item,}: any) => {
+
+  const data = useSelector(selectData);
+ 
+ 
+ const avt = data.avatarUser
+  
+  const rendeItem = ({item,index}: any) => {
+  
     return (
       <>
         <RenderItemProfile name={item.name} icon={item.icon} navi={item.navigation} navigation={navigation}/>
@@ -32,7 +41,15 @@ const RenderNullItem=()=> null;
       </View>
       <View style={{alignItems:'center',height:'14%'}}>
       <View style={styles.styleProfile}>
-          <Image source={images.avatar} style={styles.avatar} />
+      <Image
+          source={{
+            uri:
+              avt === ''
+                ? 'https://mern-ecommerce-stores.herokuapp.com/profile.png'
+                : avt,
+          }}
+          style={styles.avatar}
+        />
           <View>
             <Text style={styles.textname}>{'Nguyễn Văn Kiên'}</Text>
             <Text style={styles.textname}>{'0123456789'}</Text>

@@ -1,6 +1,7 @@
 import { createSlice} from '@reduxjs/toolkit';
 const initialState: any = {
   username:[] as any,
+  avatarUser: '' as any,
 };
 
 const Data = createSlice({
@@ -10,11 +11,14 @@ const Data = createSlice({
     addUser: (state, action) => {
       state.username.push(action.payload);
     },
+    addAvatar: (state, action) => {
+      state.avatarUser=action.payload
+    },
 }
 });
 
 export const {
-  addUser
+  addUser,addAvatar
 } = Data.actions;
 export const selectData = (state:any) => state.data;
 

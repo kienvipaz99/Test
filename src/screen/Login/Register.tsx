@@ -6,9 +6,7 @@ import images from '../../res/images';
 const Register = ({}) => {
   const dispatch = useDispatch();
   const datacoin = useSelector(selectData);
-  const add = () => {
-    dispatch(addUser('oke anh kiên'));
-  };
+ 
   return (
     <View
       style={{
